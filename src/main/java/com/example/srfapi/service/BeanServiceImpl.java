@@ -2,16 +2,24 @@ package com.example.srfapi.service;
 
 import com.example.srfapi.model.Bean;
 import com.example.srfapi.repository.BeanRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.beans.Beans;
+import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class BeanServiceImpl implements BeanService{
+    @Autowired
     BeanRepository beanRepository;
 
 
     @Override
     public List<Bean> getAllBeans() {
-        return null;
+        List<Bean> beans = new ArrayList<Bean>();
+        beanRepository.findAll().forEach(beans::add);
+        return beans;
     }
 
     @Override
@@ -21,7 +29,7 @@ public class BeanServiceImpl implements BeanService{
 
     @Override
     public Bean saveBean(Bean bean) {
-        return null;
+        return beanRepository.save(bean);
     }
 
     @Override

@@ -12,44 +12,37 @@ public class Bean {
     @Column //defining id as primary key
     @Id
     private Long id;
-
     @Column
     private String name;
-
     @Column
-    private Integer age;
-
+    private Integer field;
     @Column
-    private String email;
+    private String extraField;
+
+
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
-    public Integer getAge() {
-        return age;
+    public Integer getField() {
+        return field;
+    }
+    public void setField(Integer field) {
+        this.field = field;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public String getExtraField() {
+        return extraField;
     }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setExtraField(String extraField) {
+        this.extraField = extraField;
     }
 }
