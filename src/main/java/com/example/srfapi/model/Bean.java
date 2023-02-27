@@ -19,30 +19,12 @@ public class Bean {
     @Column
     private String extraField;
 
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public Integer getField() {
-        return field;
-    }
-    public void setField(Integer field) {
-        this.field = field;
-    }
-
-    public String getExtraField() {
-        return extraField;
-    }
-    public void setExtraField(String extraField) {
-        this.extraField = extraField;
-    }
+    public Long getId() {return id;}
+    public void setId(Long id) {this.id = id;}
+    public String getName() {return name;}
+    public void setName(String name) {this.name = name;}
+    public Integer getField() {return field;}
+    public void setField(Integer field) {this.field = field;}
+    public String getExtraField() {return extraField;}
+    public void setExtraField(String extraField) {this.extraField = extraField;}
 }
