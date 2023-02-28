@@ -27,4 +27,17 @@ public class Bean {
     public void setField(Integer field) {this.field = field;}
     public String getExtraField() {return extraField;}
     public void setExtraField(String extraField) {this.extraField = extraField;}
-}
+
+    @Override
+    public int hashCode() {
+        return id.hashCode();
+    }
+    @Override
+    public String toString() {
+        return "Bean{" +
+                "id=" + id +
+                ", firstName='" + name + '\'' +
+                '}';
+    }
+    }
+
