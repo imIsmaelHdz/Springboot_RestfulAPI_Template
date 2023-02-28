@@ -9,6 +9,6 @@ public interface BeanService {
     List<Bean> getAllBeans();
     Bean getBeanById(Long id);
     Bean saveBean(Bean bean);
-    Bean deleteBean(Bean bean);
-    Bean updateBwan(Long id , Bean bean);
+    String deleteBean(Long id);
+    Bean updateBean(Long id , Bean bean);
 }

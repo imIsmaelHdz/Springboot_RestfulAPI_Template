@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import java.beans.Beans;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BeanServiceImpl implements BeanService{
@@ -24,7 +25,8 @@ public class BeanServiceImpl implements BeanService{
 
     @Override
     public Bean getBeanById(Long id) {
-        return null;
+        Optional<Bean> bean = beanRepository.findById(id);
+        return bean.orElse(null);
     }
 
     @Override
@@ -33,12 +35,13 @@ public class BeanServiceImpl implements BeanService{
     }
 
     @Override
-    public Bean deleteBean(Bean bean) {
-        return null;
+    public String deleteBean(Long id) {
+        beanRepository.deleteById(id);
+        return "id"+ id + "was delete successfully";
     }
 
     @Override
-    public Bean updateBwan(Long id, Bean bean) {
+    public Bean updateBean(Long id, Bean bean) {
         return null;
     }
 }

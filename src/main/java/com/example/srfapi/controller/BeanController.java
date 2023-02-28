@@ -13,4 +13,7 @@ public class BeanController {
     @PostMapping("/bean")
     public Bean saveBean(@RequestBody Bean bean){
         return beanService.saveBean(bean);}
+
+    @GetMapping("/bean/{id}")
+    public Bean getBean(@PathVariable("id") Long id){ return beanService.getBeanById(id);}
 }
