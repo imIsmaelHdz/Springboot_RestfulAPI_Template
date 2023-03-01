@@ -36,6 +36,15 @@ public class BeanServiceImpl implements BeanService{
     }
     @Override
     public Bean updateBean(Long id, Bean bean) {
+
+        Optional<Bean> beanById = beanRepository.findById(id);
+        if (beanById.isPresent()){
+            Bean updatedBean = beanById.get();
+            updatedBean.setId(bean.getId());
+            updatedBean.setName(bean.getName());
+
+            return beanRepository.save(updatedBean);
+        }
         return null;
     }
 

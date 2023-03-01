@@ -22,6 +22,10 @@ public class BeanController {
     @GetMapping("/bean/{id}")
     public Bean getBean(@PathVariable("id") Long id){ return beanService.getBeanById(id);}
 
+    @PutMapping("/bean/{id}")
+    public Bean update(@PathVariable("id") Long id ,@RequestBody Bean bean){
+        return beanService.updateBean(id,bean);
+    }
     @DeleteMapping("/bean/{id}")
     public String deleteBean(@PathVariable("id") Long id){return beanService.deleteBean(id);}
 
