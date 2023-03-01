@@ -11,8 +11,10 @@ import java.util.List;
 public class BeanController {
     @Autowired
     BeanService beanService;
+
     @GetMapping("/beans")
     public List<Bean> getBeans(){ return beanService.getAllBeans();}
+
     @PostMapping("/bean")
     public Bean saveBean(@RequestBody Bean bean){
         return beanService.saveBean(bean);}
