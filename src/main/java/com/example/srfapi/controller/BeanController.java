@@ -31,4 +31,8 @@ public class BeanController {
 
     @GetMapping("/bean/count")
     public Long countBean(){ return beanService.countBeans();}
+
+    @GetMapping("/bean/exist/{id}")
+    public Boolean existBean(@PathVariable("id") Long id){return beanService.existBean(id);}
+
 }

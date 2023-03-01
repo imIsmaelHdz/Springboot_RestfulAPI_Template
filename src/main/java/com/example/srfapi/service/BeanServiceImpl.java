@@ -13,6 +13,12 @@ import java.util.Optional;
 public class BeanServiceImpl implements BeanService{
     @Autowired
     BeanRepository beanRepository;
+
+    @Override
+    public Boolean existBean(Long id) {
+        return beanRepository.existsById(id);
+    }
+
     @Override
     public List<Bean> getAllBeans() {
         List<Bean> beans = new ArrayList<Bean>();
@@ -32,7 +38,7 @@ public class BeanServiceImpl implements BeanService{
     @Override
     public String deleteBean(Long id) {
         beanRepository.deleteById(id);
-        return "id"+ id + "was delete successfully";
+        return "id"+ id + "was deleted successfully";
     }
     @Override
     public Bean updateBean(Long id, Bean bean) {
@@ -50,4 +56,5 @@ public class BeanServiceImpl implements BeanService{
 
     @Override
     public Long countBeans() {return beanRepository.count();}
+
 }
