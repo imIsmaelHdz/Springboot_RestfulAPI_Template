@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 public class BeanController {
     @Autowired
-    BeanService beanService;
+     BeanService beanService;
 
     @GetMapping("/beans")
     public List<Bean> getBeans(){ return beanService.getAllBeans();}
